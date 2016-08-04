@@ -7,11 +7,26 @@
 
 'use strict';
 
-var index = require('../src/index.js');
+var CountDown = require('../src/index.js');
 
 describe('测试文件', function () {
-    it('exports', function (done) {
-        expect(index).toEqual('index');
-        done();
-    });
+    it('base', function (done) {
+        var cd = new CountDown(10000);
+
+        cd.on('start', function () {
+            console.log('start');
+        });
+
+        cd.on('change', function (remain) {
+            console.log('change', Math.ceil(remain/1000));
+        });
+
+        cd.on('stop', function () {
+            console.log('stop');
+            expect(cd.is()).toEqual(false);
+            done();
+        });
+
+        cd.start();
+    }, 20000);
 });
