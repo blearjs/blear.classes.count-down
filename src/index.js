@@ -74,6 +74,20 @@ var CountDown = Events.extend({
 
 
     /**
+     * 设置时间长度
+     * @param count
+     * @returns {CountDown}
+     */
+    setCount: function (count) {
+        var the = this;
+
+        the[_options].count = count;
+
+        return the;
+    },
+
+
+    /**
      * 判断是否在倒计时
      * @returns {boolean}
      */
