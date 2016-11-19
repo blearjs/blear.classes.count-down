@@ -1,6 +1,6 @@
 {
   "name": "blear.classes.count-down",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "倒计时器",
   "scripts": {
     "live": "browser-sync start --config bs-config.js",
@@ -36,9 +36,10 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "blear.utils.object": "1.x",
     "blear.utils.time": "1.x",
+    "blear.utils.object": "1.x",
     "blear.utils.typeis": "1.x",
+    "blear.utils.date": "1.x",
     "blear.classes.events": "1.x"
   },
   "devDependencies": {
