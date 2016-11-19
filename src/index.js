@@ -207,7 +207,7 @@ var CountDown = Events.extend({
 
         the.stop();
         the.state = STATE_DESTROYED;
-        CountDown.parent.destroy(the);
+        CountDown.superInvoke('destroy', the);
     }
 });
 var _options = CountDown.sole();
