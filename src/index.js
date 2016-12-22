@@ -65,7 +65,7 @@ var CountDown = Events.extend({
 
         the.state = STATE_STARTED;
         the.emit('start');
-        the[_timer] = time.setInterval(function () {
+        var timer = the[_timer] = time.setInterval(function () {
             var elapsedTime = timer.elapsedTime;
             var remainTime = 0;
 

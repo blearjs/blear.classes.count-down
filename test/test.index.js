@@ -56,16 +56,22 @@ describe('测试文件', function () {
             interval: 10
         });
         var times = 0;
+        var started = false;
 
-        cd.start();
-        cd.start();
+        cd.on('start', function () {
+            started = true;
+        });
         cd.on('change', function () {
             times++;
         });
         cd.on('stop', function () {
             expect(times).toBeGreaterThan(0);
+            expect(started).toEqual(true);
             done();
         });
+
+        cd.start();
+        cd.start();
     });
 
     it('#pause/resume', function (done) {
