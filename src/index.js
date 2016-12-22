@@ -63,7 +63,9 @@ var CountDown = Events.extend({
             return the;
         }
 
-        var timer = the[_timer] = time.setInterval(function () {
+        the.state = STATE_STARTED;
+        the.emit('start');
+        the[_timer] = time.setInterval(function () {
             var elapsedTime = timer.elapsedTime;
             var remainTime = 0;
 
@@ -78,7 +80,6 @@ var CountDown = Events.extend({
 
             the.emit('change', remainTime, elapsedTime);
         }, the[_options].interval, true);
-        the.state = STATE_STARTED;
         return the;
     },
 
