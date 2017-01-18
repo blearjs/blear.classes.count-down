@@ -1,6 +1,6 @@
 {
   "name": "blear.classes.count-down",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "倒计时器类",
   "scripts": {
     "live": "browser-sync start --config bs-config.js",
