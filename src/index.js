@@ -153,7 +153,6 @@ var CountDown = Events.extend({
             return the;
         }
 
-        the[_count] = 0;
         time.clearInterval(the[_timer]);
         the[_timer] = null;
         the.state = STATE_READY;
