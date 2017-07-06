@@ -46,7 +46,6 @@ var CountDown = Events.extend({
             options.count = options.count.getTime() - date.now();
         }
 
-        the[_count] = options.count;
         the.state = STATE_READY;
         CountDown.parent(the);
     },
@@ -63,6 +62,7 @@ var CountDown = Events.extend({
             return the;
         }
 
+        the[_count] = the[_options].count;
         the.state = STATE_STARTED;
         the.emit('start');
         var timer = the[_timer] = time.setInterval(function () {
@@ -153,6 +153,7 @@ var CountDown = Events.extend({
             return the;
         }
 
+        the[_count] = 0;
         time.clearInterval(the[_timer]);
         the[_timer] = null;
         the.state = STATE_READY;
